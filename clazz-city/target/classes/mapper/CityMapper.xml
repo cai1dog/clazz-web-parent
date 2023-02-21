@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.yk.mapper.CityMapper">
+
+    <resultMap id="BaseResultMap" type="com.baizhi.yk.entity.City">
+            <id property="ccid" column="ccid" jdbcType="INTEGER"/>
+            <result property="ccname" column="ccname" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ccid,ccname
+    </sql>
+
+</mapper>

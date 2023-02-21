@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.yk.mapper.GrouupMapper">
+
+    <resultMap id="BaseResultMap" type="com.baizhi.yk.entity.Grouup">
+            <id property="grid" column="grid" jdbcType="INTEGER"/>
+            <result property="grname" column="grname" jdbcType="VARCHAR"/>
+            <result property="createdate" column="createDate" jdbcType="DATE"/>
+            <result property="clazzid" column="clazzId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        grid,grname,createDate,
+        clazzId
+    </sql>
+</mapper>

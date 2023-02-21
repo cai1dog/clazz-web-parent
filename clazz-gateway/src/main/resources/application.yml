@@ -1,0 +1,51 @@
+server:
+  port: 1818
+
+
+
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.9.129:8848
+    gateway:
+      #路由规则
+      routes:
+        - id: city_route  #指定路由的唯一标识
+          uri: lb://CITY #匹配对应规则后转发后后端服务节点
+          predicates: #用来指定路由规则
+            - Path=/cities/**
+            #- After=2023-02-17T14:33:33.993+08:00[Asia/Shanghai] #After 代表当前路由只在指定时间生效
+            #- Before=2023-02-17T14:40:33.993+08:00[Asia/Shanghai]
+            # -Cookie=name,xiaohei #cookie中必须有name ，name是键 xiaohei是值1111
+            #- Method=Get,Post
+
+          # fifters:
+          #  - StripPrefix=1   去除PATH前缀
+
+        - id: clazz_route  #指定路由的唯一标识
+          uri: lb://CLAZZ #匹配对应规则后转发后后端服务节点2222
+          predicates: #用来指定路由规则
+            - Path=/clazz/**
+
+
+        - id: group_route  #指定路由的唯一标识
+          uri: lb://GROUP #匹配对应规则后转发后后端服务节点4444
+          predicates: #用来指定路由规则
+            - Path=/groups/**
+
+        - id: student_route  #指定路由的唯一标识
+          uri: lb://STUDENT #匹配对应规则后转发后后端服务节点5555
+          predicates: #用来指定路由规则
+            - Path=/students/**
+
+
+
+        - id: tag_route  #指定路由的唯一标识
+          uri: lb://TAG #匹配对应规则后转发后后端服务节点6666
+          predicates: #用来指定路由规则
+            - Path=/tags/**
+
+  application:
+    name: GATEWAY
+
+
